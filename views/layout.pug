@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='module' src=scriptLink)
+    script(src='/javascripts/modules/nQuery.js')
+  body
+    header
+        nav
+          ul
+            li
+                a(href="/") Home
+            li
+                a(href="/createuser") Create user
+            li
+                a(href="/login") Login
+            li
+                a(href="/todo") Todo list
+          //  li
+          //      a(href="/country") Select Country
+          //  li
+          //      a(href="/countryData") Register Country
+
+    block content

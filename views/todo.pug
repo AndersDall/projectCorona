@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1= title
+  h2= subtitle
+  p Welcome to #{title}
+
+  form(action="todo" + read method="POST")
+      table
+          tr
+            td
+              label Overskrift
+            td
+              input(type="text", name="overskrift")
+          tr
+            td
+              label Indhold
+            td
+              input(type="text", name="indhold")
+          tr
+            td
+              label Prioritet
+            td
+              input(type="text", name="prioritet")
+          tr
+            td
+              label Start
+            td
+              input(type="Date", name="start")
+          tr
+            td
+              label Slut
+            td
+              input(type="date", name="deadline")
+          tr
+            td
+              button(type="submit") Send
