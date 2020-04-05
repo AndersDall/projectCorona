@@ -15,6 +15,7 @@ const todoSchema = mongoose.Schema({
     },
     start: {
         type: Date,
+        requiered: true,
         default: Date.now
     },
     slut: {

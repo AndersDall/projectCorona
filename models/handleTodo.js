@@ -1,10 +1,12 @@
 "use strict";
 const mon = require("./mongooseWrap");
+const mongoose = require("mongoose");
 const Todo = require("./todo");
 const dbServer = "localhost";
 const dbName = "todo";
 
 exports.upsertTodo = async function (req) {
+    let user = 'anders'//req.params.todoer;    // udnytter todoer fra url i router(index.js
     let chk = { title: req.body.title };
     let todo = new Todo({
         overskrift: req.body.overskrift,
@@ -14,7 +16,7 @@ exports.upsertTodo = async function (req) {
         slutdato: req.body.slutdato
     });
     try {
-        let cs = await mon.upsert(dbServer, dbName, Todo, toDo, chk);
+        let cs = await mon.upsert(dbServer, dbName, Todo, todo, chk);  // todo ændret fra toDo
         return;
 } catch(e) {
     console.error(e);

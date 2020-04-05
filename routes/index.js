@@ -16,12 +16,13 @@ router.get('/', function(req, res, next) {
 router.get('/todo', function(req, res, next) {
   res.render('todo', {
       title: 'Todo',
-      subtitle: 'Skriv din todoliste her'
+      subtitle: 'Skriv din todoliste her',
+      read: 'anders '//req.sessions.user
   });
 });
 
-router.post('/todos', function(req, res, next) {
-    let todo = TodoHandler.upsertTodo(req);
+router.post('/todo/:todoer', async function(req, res, next) {
+    let todo = await ​Todo.upsertTodo(req);
     console.log(todo);
     res.redirect('/todo')
 });
